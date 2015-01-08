@@ -2,6 +2,8 @@ load("d2.Rdata") #Subset data file with dates properly typed. Variable: "d2"
 
 cols = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 
+png("plot3.png", width=480, height=480)
+
 matplot(d2[,"DateTime"], 
         d2[,cols], 
         type="l", 
@@ -19,3 +21,4 @@ legend("topright",
        col=1:4, 
        lty=c(1,1)
        )
+dev.off()
